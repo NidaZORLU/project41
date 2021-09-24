@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Muli:300,700&display=swap');
+//Mixins
+@mixin transitionEffect($par){
+  transition: $par all;
+  -webkit-transition: $par all;
+  -moz-transition: $par all;
+  -o-transition: $par all;
+}
+@mixin centerFlex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//color
+$bg-color-1 :#fbfcfe;
+$bg-color-2: #fff;
+$bg-color-3: #000;
+$bg-color-4:#eee;
+$bg-color-5:#3498db;
+$bg-color-6: rgba(0, 0, 0, 0.25);
+$bg-color-7: #eaeaea;
+$bg-color-8: #777;
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: $bg-color-1;
+  font-family: 'Roboto', sans-serif;
+  @include centerFlex;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.container{
+  background-color: $bg-color-2;
+  border: 3px $bg-color-3 solid;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.code-container{
+  @include centerFlex;
+  margin: 40px 0;
+}
+.code{
+  border-radius: 5px;
+  font-size: 75px;
+  height: 120px;
+  width: 100px;
+  border: 1px solid $bg-color-4;
+  margin: 1%;
+  text-align: center;
+  font-weight: 300;
+  -moz-appearance: textfield;
+}
+.code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+ .code:valid{
+   border-color:$bg-color-5 ;
+   box-shadow: 0 10px 10px -5px $bg-color-6;
+ }
+ .info{
+   background-color: $bg-color-7;
+   display: inline-block;
+   padding: 10px;
+   line-height: 20px;
+   max-width: 400px;
+   color: $bg-color-8;
+   border-radius: 5px;
+ }
+
+ @media (max-width: 600px){
+   .code-container{
+     flex-wrap: wrap;
+   }
+   .code{
+     font-size: 60px;
+     height: 80px;
+     max-width: 70px;
+   }
+ }
